@@ -46,6 +46,7 @@ async function boot() {
 }
 
 let current = null;
+let routeToken = 0;
 async function route() {
   if (shell.hidden) return;
   const [name, query] = (location.hash.replace(/^#\/?/, '') || 'hoje').split('?');
@@ -58,14 +59,18 @@ async function route() {
   const titles = { hoje: 'Hoje', agenda: 'Agenda', agendamentos: 'Agendamentos', clientes: 'Clientes', servicos: 'Serviços',
     profissionais: 'Profissionais', horarios: 'Horários e regras', bloqueios: 'Bloqueios e folgas', relatorios: 'Relatórios', configuracoes: 'Configurações' };
   document.title = `${titles[name] || 'Painel'} · Studio Ludy Brito`;
-  view().onclick = null;
-  view().innerHTML = '<p class="empty">Carregando…</p>';
+  const token = ++routeToken;
+  const box = document.createElement('div');
+  box.className = 'view-box';
+  if (!view().firstElementChild?.classList.contains('view-box')) view().innerHTML = '<p class="empty">Carregando…</p>';
   try {
-    await fn(view(), new URLSearchParams(query || ''));
+    await fn(box, new URLSearchParams(query || ''));
   } catch (err) {
     if (err.status === 401 || err.code === 'NOT_AUTHENTICATED') { await auth.signOut(); showAuth(); return; }
-    view().innerHTML = `<p class="notice notice-danger">${err.message}</p>`;
+    box.innerHTML = `<p class="notice notice-danger">${err.message}</p>`;
   }
+  if (token !== routeToken) return; // outra tela foi aberta enquanto esta carregava
+  view().replaceChildren(box);
   view().focus({ preventScroll: true });
 }
 window.addEventListener('hashchange', route);

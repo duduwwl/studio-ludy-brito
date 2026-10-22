@@ -264,13 +264,16 @@ export async function appointments(el, q) {
     <div data-results></div>`;
   const form = el.querySelector('[data-filters]');
   const res = el.querySelector('[data-results]');
+  let seq = 0;
   async function load() {
+    const my = ++seq;
     res.innerHTML = '<p class="empty">Carregando…</p>';
     const r = await rpc('admin_list_appointments', {
       p_from: st.from ? ts(st.from, '00:00') : null, p_to: st.to ? ts(addDays(st.to, 1), '00:00') : null,
       p_statuses: st.status ? [st.status] : null, p_professional_id: st.pro || null, p_search: st.search || null,
       p_order: st.order, p_limit: PAGE, p_offset: st.page * PAGE,
     });
+    if (my !== seq) return; // resposta antiga: um filtro mais novo já foi pedido
     el.querySelector('[data-total]').textContent = `${r.total} no filtro`;
     if (!r.rows.length) { res.innerHTML = '<p class="empty">Nenhum agendamento com esses filtros.</p>'; return; }
     res.innerHTML = `
@@ -317,8 +320,11 @@ export async function clients(el) {
     </form>
     <div data-results></div>`;
   const res = el.querySelector('[data-results]');
+  let seq = 0;
   async function load() {
+    const my = ++seq;
     const r = await rpc('admin_list_clients', { p_search: st.search || null, p_filter: st.filter || null, p_limit: PAGE, p_offset: st.page * PAGE });
+    if (my !== seq) return;
     el.querySelector('[data-total]').textContent = `${r.total} cliente${r.total === 1 ? '' : 's'}`;
     if (!r.rows.length) { res.innerHTML = '<p class="empty">Nenhuma cliente encontrada.</p>'; return; }
     res.innerHTML = `<div class="table-wrap responsive"><table class="table"><thead><tr><th>Nome</th><th>WhatsApp</th><th>E-mail</th><th class="num">Agendamentos</th><th>Última visita</th><th>Próximo horário</th></tr></thead>
@@ -812,7 +818,9 @@ export async function reports(el, q) {
     if (p) { to = todayISO(); from = p.dataset.preset === 'month' ? `${to.slice(0, 7)}-01` : addDays(to, -29); form.from.value = from; form.to.value = to; load(); }
     if (ev.target.closest('[data-csv]')) {
       const rows = await act(ev.target, () => rpc('admin_export_appointments', { p_from: from, p_to: to })).catch(() => null);
-      if (rows) downloadCsv(rows, `agendamentos-${from}-a-${to}.csv`);
+      if (rows) downloadCsv(rows.map((r) => ({ ...r, status: STATUS_LABEL[r.status] || r.status, origem: r.origem === 'online' ? 'site' : 'equipe' })),
+        `agendamentos-${from}-a-${to}.csv`,
+        ['protocolo', 'data', 'horario', 'duracao_min', 'cliente', 'whatsapp', 'email', 'servicos', 'profissional', 'valor', 'status', 'origem']);
     }
     const c = ev.target.closest('[data-client]'); if (c) openClient(c.dataset.client);
   };

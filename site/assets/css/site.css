@@ -528,3 +528,6 @@ body.menu-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
 }
+
+/* aviso de demonstração (só aparece com demo: true em config.js) */
+.demo-note { margin: 0; max-width: none; background: var(--field-rose); color: var(--ink); font-size: var(--step-small); text-align: center; padding: .5rem var(--margin); }

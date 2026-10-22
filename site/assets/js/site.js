@@ -1,5 +1,13 @@
 // Comportamentos comuns a todas as páginas públicas.
-import { rpc, isConfigured } from './api.js';
+import { rpc, isConfigured, isDemo } from './api.js';
+
+// Aviso visível quando a página roda em modo demonstração (sem banco real).
+if (isDemo()) {
+  const note = document.createElement('p');
+  note.className = 'demo-note';
+  note.textContent = 'Demonstração: a agenda funciona neste navegador, mas nenhum horário é reservado de verdade.';
+  document.body.prepend(note);
+}
 
 // Menu do celular
 const toggle = document.querySelector('[data-menu-toggle]');

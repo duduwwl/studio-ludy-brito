@@ -6,7 +6,8 @@ const BASE = (cfg.supabaseUrl || '').replace(/\/$/, '');
 const KEY = cfg.supabaseAnonKey || '';
 const SESSION_KEY = document.body?.dataset.sessionKey || cfg.sessionKey || 'lb.session';
 
-export const isConfigured = () => Boolean(BASE && KEY);
+export const isDemo = () => Boolean(cfg.demo) && !(BASE && KEY);
+export const isConfigured = () => Boolean(BASE && KEY) || isDemo();
 
 // Mensagens amigáveis para os códigos de erro do banco.
 const MESSAGES = {
@@ -71,6 +72,7 @@ async function validToken() {
 
 // ---------------------------------------------------------------- HTTP
 async function request(path, { method = 'POST', body, auth = true, headers = {} } = {}) {
+  if (isDemo()) throw new ApiError('DEMO', 'Na demonstração, o painel e o login por e-mail ficam desligados. Eles funcionam quando o Supabase é configurado.');
   if (!isConfigured()) throw new ApiError('NOT_CONFIGURED');
   const token = auth ? await validToken() : null;
   let res;
@@ -104,6 +106,7 @@ async function request(path, { method = 'POST', body, auth = true, headers = {} 
 
 // Chama uma função do banco (schema public).
 export function rpc(fn, args = {}) {
+  if (isDemo()) return import('./demo.js').then((m) => m.rpc(fn, args));
   return request(`/rest/v1/rpc/${fn}`, { body: args });
 }
 

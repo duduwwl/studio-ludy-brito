@@ -93,9 +93,9 @@ export function formData(form) {
   return out;
 }
 
-export function downloadCsv(rows, filename) {
+export function downloadCsv(rows, filename, columns = null) {
   if (!rows.length) { toast('Nada para exportar neste período.'); return; }
-  const cols = Object.keys(rows[0]);
+  const cols = columns || Object.keys(rows[0]);
   const cell = (v) => {
     if (v == null) return '';
     let s = String(v);

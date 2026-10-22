@@ -34,3 +34,12 @@ $$;
 
 grant usage on schema auth to anon, authenticated, service_role;
 grant usage on schema extensions to anon, authenticated, service_role;
+
+-- Storage mínimo (o real tem muito mais colunas)
+create schema if not exists storage;
+create table if not exists storage.buckets (id text primary key, name text not null, public boolean default false);
+create table if not exists storage.objects (
+  id uuid primary key default extensions.gen_random_uuid(), bucket_id text references storage.buckets(id),
+  name text, owner uuid, created_at timestamptz default now());
+alter table storage.objects enable row level security;
+grant usage on schema storage to anon, authenticated, service_role;

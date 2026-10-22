@@ -35,8 +35,9 @@ def psql(sql, claims=None, headers=None, role=None):
     pre = ""
     if role:
         pre += f"set role {role};"
-    pre += "select set_config('request.jwt.claims', $c${}$c$, false);".format(json.dumps(claims or {"role": "anon"}))
-    pre += "select set_config('request.headers', $h${}$h$, false);".format(json.dumps(headers or {}))
+    pre += ("do $d$ begin perform set_config('request.jwt.claims', $c${}$c$, false); "
+            "perform set_config('request.headers', $h${}$h$, false); end $d$;").format(
+        json.dumps(claims or {"role": "anon"}), json.dumps(headers or {}))
     p = subprocess.run(["psql", "-h", "/tmp", "-p", PGPORT, "-U", "postgres", "-d", DB, "-X", "-q", "-t", "-A",
                         "-v", "ON_ERROR_STOP=1", "-c", pre, "-c", sql], capture_output=True, text=True)
     if p.returncode:
