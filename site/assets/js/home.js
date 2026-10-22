@@ -37,15 +37,17 @@ async function renderServices(site) {
     box.innerHTML = '<p class="muted">Os serviços estão sendo atualizados. Fale com a gente pelo WhatsApp.</p>';
     return;
   }
-  box.innerHTML = [...groups.entries()].map(([cid, list]) => `
-    <div class="svc-group" role="list">
+  box.innerHTML = [...groups.entries()].map(([cid, list], groupIndex) => `
+    <section class="svc-group" aria-labelledby="svc-group-${groupIndex}">
+      <h3 class="svc-group-title" id="svc-group-${groupIndex}">${escapeHtml(cats.get(cid)?.name || 'Outros')}</h3>
+      <div role="list">
       ${list.map((s) => `
         <a class="svc-row" role="listitem" href="${ROOT}servicos/detalhe/?s=${encodeURIComponent(s.slug)}">
-          <span class="svc-kind">${escapeHtml(cats.get(cid)?.name || 'Outros')}</span>
           <span class="svc-name">${escapeHtml(s.name)}</span>
           <span class="svc-value">${escapeHtml(formatPrice(s))}<small>${formatDuration(s.duration_minutes)}</small></span>
         </a>`).join('')}
-    </div>`).join('');
+      </div>
+    </section>`).join('');
 }
 
 // --- próximo horário livre (a coisa viva da página) ---
