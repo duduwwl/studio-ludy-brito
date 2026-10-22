@@ -151,7 +151,7 @@ body.menu-open { overflow: hidden; }
   grid-template-rows: auto 1fr; align-items: start;
 }
 .hero-small { grid-column: 1 / 5; grid-row: 1; }
-.hero-small img { aspect-ratio: 2.3 / 1; object-fit: cover; object-position: center 44%; width: 100%; }
+.hero-small img { aspect-ratio: 1; object-fit: contain; width: 100%; }
 .hero-copy { grid-column: 1 / 5; grid-row: 2; padding-top: 2rem; padding-right: 1.5rem; }
 .hero-title { font-size: var(--step-head); line-height: 1; letter-spacing: -0.03em; max-width: 9ch; }
 .hero-sentence { margin-top: 1.5rem; max-width: 30ch; font-size: var(--step-body); line-height: 1.5; }
@@ -210,6 +210,9 @@ body.menu-open { overflow: hidden; }
 .menu-word { grid-column: 6 / 7; grid-row: 1; align-self: start; font-size: var(--step-small); color: var(--muted); padding-top: .35rem; }
 .menu-table { grid-column: 7 / 13; grid-row: 1; align-self: start; min-width: 0; }
 .menu-more, .wall-more, .about-more { margin-top: 3rem; display: flex; justify-content: flex-end; font-size: var(--step-body); max-width: none; }
+@media (max-width: 39.99em) {
+  .menu-more, .wall-more, .about-more { justify-content: flex-start; }
+}
 .svc-group { padding-top: .75rem; border-top: 1px solid color-mix(in srgb, var(--ink) 20%, transparent); }
 .svc-group + .svc-group { margin-top: 1.6rem; }
 .svc-group-title { margin-bottom: .15rem; color: var(--muted); font-size: var(--step-small); letter-spacing: .02em; }
@@ -278,15 +281,14 @@ body.menu-open { overflow: hidden; }
 .about-photo { grid-column: 1 / 9; position: relative; }
 .about-photo img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; }
 .about-note {
-  position: absolute; top: 0; right: 0; width: 22rem; padding: 1.25rem;
-  background: var(--bg); font-size: var(--step-body); line-height: 1.5;
+  position: absolute; top: 0; right: 0; width: min(18rem, 46%); padding: 1rem;
+  background: var(--bg); font-size: clamp(.9375rem, .88rem + .16vw, 1.05rem); line-height: 1.42;
 }
 .about-side { grid-column: 9 / 13; }
 .about-tile {
-  background: #fff; aspect-ratio: 1; display: grid; place-items: center; overflow: hidden;
-  padding: clamp(.75rem, 1.4vw, 1.25rem);
+  background: transparent; aspect-ratio: 1; display: grid; place-items: center; overflow: hidden;
 }
-.about-logo { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+.about-logo { width: 100%; height: 100%; object-fit: contain; background: transparent; }
 .facts { margin-top: 1.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem 1rem; font-size: var(--step-small); }
 .facts dt { color: var(--muted); }
 .facts dd { margin-top: .15rem; font-size: 1rem; }
@@ -296,7 +298,7 @@ body.menu-open { overflow: hidden; }
   .about-photo img { aspect-ratio: 4 / 3; }
   .about-note { position: static; width: auto; padding: 1.25rem 0 0; }
   .about-side { margin-top: 2.5rem; }
-  .about-tile { aspect-ratio: 3 / 2; }
+  .about-tile { aspect-ratio: 1; max-width: 22rem; margin-inline: auto; }
 }
 
 /* ---------- faixa de painéis desiguais ---------- */
