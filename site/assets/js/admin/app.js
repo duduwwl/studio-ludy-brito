@@ -1,5 +1,5 @@
 // Painel: autenticação, casca e rotas.
-import { auth, rpc, getSession, isConfigured } from '../api.js';
+import { auth, rpc, getSession, isConfigured, isDemo } from '../api.js';
 import { toast, ROOT } from '../format.js';
 import { store, view } from './core.js';
 import { setAfterChange } from './appointment.js';
@@ -22,6 +22,11 @@ function showAuth(form = 'login') {
 }
 
 async function boot() {
+  if (isDemo()) {
+    showAuth();
+    $('[data-auth-error]').textContent = 'Esta é uma demonstração do site. O painel funciona depois que o Supabase for configurado (veja o README).';
+    return;
+  }
   if (!isConfigured()) {
     showAuth();
     $('[data-auth-error]').textContent = 'Configure o Supabase em assets/js/config.js para usar o painel.';

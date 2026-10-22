@@ -82,7 +82,7 @@ for (const file of pages) {
   const nav = Object.fromEntries(['inicio', 'servicos', 'galeria', 'sobre', 'contato', 'agendamento']
     .map((k) => [k, meta.nav === k ? ' aria-current="page"' : '']));
   const scripts = (meta.scripts || []).map((s) =>
-    `<script type="module" src="${root}assets/js/${s}.js?v=${VERSION}"></script>`).join('\n');
+    `<script type="module" src="${root}assets/js/${s}.js"></script>`).join('\n');
   const styles = (meta.styles || []).map((s) =>
     `<link rel="stylesheet" href="${root}assets/css/${s}.css?v=${VERSION}">`).join('\n');
   const ctx = {
