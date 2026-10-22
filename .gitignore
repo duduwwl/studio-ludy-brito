@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+tests/mock/uploads/
+.taste-skill/inspect/
+site/assets/js/config.js
+__pycache__/
+*.pyc

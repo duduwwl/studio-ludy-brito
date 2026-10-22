@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meus agendamentos · Studio Ludy Brito</title>
+<meta name="description" content="Consulte, reagende ou cancele seus horários no Studio Ludy Brito.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://duduwwl.github.io/studio-ludy-brito/meus-agendamentos/">
+<meta name="theme-color" content="#F4F0EC">
+<meta name="lb-root" content="../">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Ludy Brito">
+<meta property="og:title" content="Meus agendamentos · Studio Ludy Brito">
+<meta property="og:description" content="Consulte, reagende ou cancele seus horários no Studio Ludy Brito.">
+<meta property="og:url" content="https://duduwwl.github.io/studio-ludy-brito/meus-agendamentos/">
+<meta property="og:image" content="https://duduwwl.github.io/studio-ludy-brito/images/hero/retrato-azul-1200.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../images/brand/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=mvj1rpmj">
+<link rel="stylesheet" href="../assets/css/booking.css?v=mvj1rpmj">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../assets/js/config.js?v=mvj1rpmj"></script>
+
+</head>
+<body class="page-account">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="bar" data-bar>
+  <a class="wordmark" href="../" aria-label="Studio Ludy Brito, página inicial">
+    <img src="../images/brand/logo-lb-150.webp" width="44" height="44" alt="">
+    <span>Studio Ludy Brito</span>
+  </a>
+  <nav class="bar-nav" aria-label="Principal">
+    <a href="../servicos/">Serviços</a>
+    <a href="../galeria/">Galeria</a>
+    <a href="../sobre/">Sobre</a>
+    <a href="../contato/">Contato</a>
+  </nav>
+  <a class="button bar-action" href="../agendamento/">Agendar horário</a>
+  <button class="bar-menu" type="button" aria-expanded="false" aria-controls="menu-movel" data-menu-toggle>
+    <span class="bar-menu-label">Menu</span>
+  </button>
+</header>
+<div class="mobile-menu" id="menu-movel" hidden data-menu>
+  <nav aria-label="Menu">
+    <a href="../">Início</a>
+    <a href="../servicos/">Serviços</a>
+    <a href="../galeria/">Galeria</a>
+    <a href="../sobre/">Sobre o studio</a>
+    <a href="../contato/">Contato</a>
+    <a href="../meus-agendamentos/">Meus agendamentos</a>
+  </nav>
+  <a class="button button-wide" href="../agendamento/">Agendar horário</a>
+  <p class="mobile-menu-info">R. Bernardino Macieira, 334, Centro · Lavras<br>Ter a sex, 8h às 19h · Sáb, 9h às 13h</p>
+</div>
+
+<main id="conteudo" tabindex="-1">
+<div class="account" data-account>
+  <header>
+    <h1>Meus agendamentos</h1>
+    <p class="account-lead" style="margin-top:1rem">Consulte, reagende ou cancele. Por segurança, só mostramos um agendamento com o link enviado na confirmação ou depois de confirmar seu e-mail com um código.</p>
+  </header>
+
+  <p class="booking-alert" role="alert" data-account-alert hidden></p>
+
+  <section class="panel" data-single hidden aria-labelledby="single-title">
+    <h2 id="single-title">Seu agendamento</h2>
+    <div data-single-body></div>
+  </section>
+
+  <section class="panel" data-device hidden aria-labelledby="device-title">
+    <h2 id="device-title">Agendados neste aparelho</h2>
+    <div data-device-list></div>
+  </section>
+
+  <section class="panel" data-login aria-labelledby="login-title">
+    <h2 id="login-title">Entrar com seu e-mail</h2>
+    <p>Use o e-mail informado no agendamento. Enviaremos um código de 6 dígitos.</p>
+    <form class="inline-form" data-otp-request novalidate>
+      <div class="form-row">
+        <label for="otp-email">E-mail</label>
+        <input class="field" id="otp-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+      </div>
+      <button class="button" type="submit">Enviar código</button>
+    </form>
+    <form class="inline-form" data-otp-verify hidden novalidate>
+      <div class="form-row">
+        <label for="otp-code">Código recebido</label>
+        <input class="field" id="otp-code" name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required>
+      </div>
+      <button class="button" type="submit">Entrar</button>
+      <button class="button-back" type="button" data-otp-restart>Usar outro e-mail</button>
+    </form>
+    <p class="field-hint">Não informou e-mail? Use o link da confirmação ou fale com a gente pelo <a class="link-plain" href="https://wa.me/5535991260502" rel="noopener">WhatsApp</a>.</p>
+  </section>
+
+  <section class="panel" data-mine hidden aria-labelledby="mine-title">
+    <div class="appt-head"><h2 id="mine-title">Próximos horários</h2><button class="button-back" type="button" data-signout>Sair</button></div>
+    <p class="muted" data-mine-email></p>
+    <div data-mine-upcoming></div>
+    <h2 style="margin-top:1.5rem">Histórico</h2>
+    <div class="history-list" data-mine-history></div>
+  </section>
+
+  <p><a class="button" href="../agendamento/">Fazer um novo agendamento</a></p>
+</div>
+
+<dialog class="dialog" data-cancel-dialog aria-labelledby="cancel-title">
+  <form class="dialog-inner" method="dialog" data-cancel-form>
+    <h2 id="cancel-title">Cancelar agendamento?</h2>
+    <p data-cancel-text></p>
+    <div class="form-row">
+      <label for="cancel-reason">Motivo <span class="muted">(opcional)</span></label>
+      <textarea class="field" id="cancel-reason" name="reason" rows="2" maxlength="300"></textarea>
+    </div>
+    <div class="step-actions" style="margin-top:0">
+      <button class="button button-keep" type="submit" value="ok" data-cancel-ok>Cancelar agendamento</button>
+      <button class="button-back" type="submit" value="no">Manter horário</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog class="dialog" data-resched-dialog aria-labelledby="resched-title">
+  <div class="dialog-inner">
+    <h2 id="resched-title">Escolha um novo horário</h2>
+    <p class="muted" data-resched-info></p>
+    <div>
+      <p class="slot-label">Dias com horários livres</p>
+      <div class="slot-buttons" data-resched-days role="radiogroup" aria-label="Dias"></div>
+    </div>
+    <div data-resched-slots></div>
+    <div class="step-actions" style="margin-top:0">
+      <button class="button button-keep" type="button" data-resched-ok disabled>Confirmar novo horário</button>
+      <button class="button-back" type="button" data-resched-close>Voltar</button>
+    </div>
+  </div>
+</dialog>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-photo">
+    <picture><source type="image/avif" srcset="../images/studio/detalhe-azul-close-480.avif 480w, ../images/studio/detalhe-azul-close-800.avif 800w, ../images/studio/detalhe-azul-close-1200.avif 1200w, ../images/studio/detalhe-azul-close-1800.avif 1800w" sizes="(min-width: 64em) 50vw, 100vw"><img src="../images/studio/detalhe-azul-close-800.webp" srcset="../images/studio/detalhe-azul-close-480.webp 480w, ../images/studio/detalhe-azul-close-800.webp 800w, ../images/studio/detalhe-azul-close-1200.webp 1200w, ../images/studio/detalhe-azul-close-1800.webp 1800w" sizes="(min-width: 64em) 50vw, 100vw" width="3072" height="3840" loading="lazy" decoding="async" alt="Mãos com esmaltação em gel azul com glitter, feita no studio"></picture>
+  </div>
+  <div class="footer-field">
+    <a class="footer-wordmark" href="../">Studio Ludy Brito</a>
+    <nav class="footer-menu" aria-label="Rodapé">
+      <a href="../servicos/">Serviços</a>
+      <a href="../agendamento/">Agendar horário</a>
+      <a href="../galeria/">Galeria</a>
+      <a href="../sobre/">Sobre o studio</a>
+      <a href="../meus-agendamentos/">Meus agendamentos</a>
+      <a href="../contato/">Contato</a>
+    </nav>
+    <div class="footer-blocks">
+      <div>
+        <h2 class="footer-label">Visite</h2>
+        <p>R. Bernardino Macieira, 334<br>Centro, Lavras – MG<br>Ter a sex, 8h às 19h · Sáb, 9h às 13h</p>
+      </div>
+      <div>
+        <h2 class="footer-label">Fale com a gente</h2>
+        <p><a class="link-plain" href="https://wa.me/5535991260502" rel="noopener">WhatsApp (35) 99126-0502</a><br>
+        <a class="link-plain" href="https://www.instagram.com/studioludybrito/" rel="noopener">Instagram @studioludybrito</a></p>
+      </div>
+    </div>
+    <p class="footer-legal">© 2026 Studio Ludy Brito · LB Esmalteria &amp; Cafeteria · <a href="../privacidade/">Privacidade</a> · <a href="../admin/" rel="nofollow">Área da equipe</a></p>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="../assets/js/site.js?v=mvj1rpmj"></script>
+<script type="module" src="../assets/js/account.js?v=mvj1rpmj"></script>
+</body>
+</html>

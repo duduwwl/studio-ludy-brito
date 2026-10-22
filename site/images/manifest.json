@@ -1,0 +1,207 @@
+{
+ "hero/retrato-azul": {
+  "w": 3072,
+  "h": 4096,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "hero/detalhe-preto": {
+  "w": 1984,
+  "h": 1984,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "hero/pes-francesinha": {
+  "w": 1760,
+  "h": 1100,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/azul-glitter-retrato": {
+  "w": 3072,
+  "h": 4096,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/azul-glitter-maos": {
+  "w": 2268,
+  "h": 3024,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/azul-glitter-detalhe": {
+  "w": 3072,
+  "h": 4096,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/preto-francesinha-dourada": {
+  "w": 1984,
+  "h": 2528,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/alongamento-nude-pontos": {
+  "w": 1088,
+  "h": 1312,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "gallery/marsala": {
+  "w": 1302,
+  "h": 1736,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/pes-gel-francesinha": {
+  "w": 1760,
+  "h": 2347,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "gallery/pes-branco-paisagem": {
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "gallery/pes-branco": {
+  "w": 1024,
+  "h": 1296,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "services/manicure": {
+  "w": 1302,
+  "h": 1628,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "services/esmaltacao-em-gel": {
+  "w": 2268,
+  "h": 2835,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "services/pedicure": {
+  "w": 1024,
+  "h": 1280,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "services/esmaltacao-em-gel-nos-pes": {
+  "w": 1760,
+  "h": 2200,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "services/alongamento-em-gel": {
+  "w": 1050,
+  "h": 1312,
+  "widths": [
+   480,
+   800,
+   1200
+  ]
+ },
+ "services/manutencao-de-alongamento": {
+  "w": 1984,
+  "h": 2480,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "studio/maos-azul-paisagem": {
+  "w": 2268,
+  "h": 1418,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "studio/detalhe-azul-close": {
+  "w": 3072,
+  "h": 3840,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ },
+ "backgrounds/maos-azul-faixa": {
+  "w": 2304,
+  "h": 4096,
+  "widths": [
+   480,
+   800,
+   1200,
+   1800
+  ]
+ }
+}

@@ -1,0 +1,77 @@
+<!--meta {"title": "Painel · Studio Ludy Brito", "description": "Área restrita da equipe.", "noindex": true, "layout": "admin-layout"} -->
+<!-- Entrada / recuperação de senha -->
+<div class="auth" data-auth hidden>
+  <div class="auth-card">
+    <div class="auth-brand">
+      <img src="{{root}}images/brand/logo-lb-150.webp" width="56" height="56" alt="">
+      <p>Studio Ludy Brito<br><span class="muted">Painel da equipe</span></p>
+    </div>
+    <form class="form" data-login-form novalidate>
+      <h1 class="auth-title">Entrar</h1>
+      <div class="form-row"><label for="l-email">E-mail</label><input class="field" id="l-email" name="email" type="email" autocomplete="username" required></div>
+      <div class="form-row"><label for="l-pass">Senha</label><input class="field" id="l-pass" name="password" type="password" autocomplete="current-password" required minlength="8"></div>
+      <p class="field-error" data-auth-error role="alert"></p>
+      <button class="button" type="submit">Entrar</button>
+      <button class="button-back" type="button" data-forgot>Esqueci minha senha</button>
+    </form>
+    <form class="form" data-forgot-form hidden novalidate>
+      <h1 class="auth-title">Recuperar senha</h1>
+      <p>Enviaremos um link para criar uma nova senha.</p>
+      <div class="form-row"><label for="f-email-r">E-mail</label><input class="field" id="f-email-r" name="email" type="email" autocomplete="username" required></div>
+      <p class="field-error" data-forgot-error role="alert"></p>
+      <button class="button" type="submit">Enviar link</button>
+      <button class="button-back" type="button" data-back-login>Voltar para entrar</button>
+    </form>
+    <form class="form" data-newpass-form hidden novalidate>
+      <h1 class="auth-title">Nova senha</h1>
+      <div class="form-row"><label for="n-pass">Nova senha (mínimo 8 caracteres)</label><input class="field" id="n-pass" name="password" type="password" autocomplete="new-password" required minlength="8"></div>
+      <div class="form-row"><label for="n-pass2">Repita a senha</label><input class="field" id="n-pass2" name="password2" type="password" autocomplete="new-password" required minlength="8"></div>
+      <p class="field-error" data-newpass-error role="alert"></p>
+      <button class="button" type="submit">Salvar senha</button>
+    </form>
+  </div>
+</div>
+
+<!-- Aplicativo -->
+<div class="shell" data-shell hidden>
+  <aside class="side" aria-label="Navegação do painel">
+    <a class="side-brand" href="#/hoje">
+      <img src="{{root}}images/brand/logo-lb-150.webp" width="40" height="40" alt="">
+      <span>Studio Ludy Brito<small>Painel</small></span>
+    </a>
+    <nav class="side-nav" data-nav>
+      <a href="#/hoje">Hoje</a>
+      <a href="#/agenda">Agenda</a>
+      <a href="#/agendamentos">Agendamentos</a>
+      <a href="#/clientes">Clientes</a>
+      <span class="side-group">Studio</span>
+      <a href="#/servicos">Serviços</a>
+      <a href="#/profissionais">Profissionais</a>
+      <a href="#/horarios">Horários e regras</a>
+      <a href="#/bloqueios">Bloqueios e folgas</a>
+      <a href="#/relatorios" data-role="owner,manager">Relatórios</a>
+      <a href="#/configuracoes">Configurações</a>
+    </nav>
+    <div class="side-user">
+      <p data-user-name></p>
+      <p class="muted" data-user-role></p>
+      <button class="button-back" type="button" data-signout>Sair</button>
+      <a class="link-plain side-site" href="{{root}}" target="_blank" rel="noopener">Ver o site</a>
+    </div>
+  </aside>
+  <main class="canvas" id="painel" tabindex="-1" data-view aria-live="polite"></main>
+  <nav class="tabbar" aria-label="Atalhos">
+    <a href="#/hoje">Hoje</a>
+    <a href="#/agenda">Agenda</a>
+    <a href="#/agendamentos">Lista</a>
+    <a href="#/clientes">Clientes</a>
+    <button type="button" data-more>Mais</button>
+  </nav>
+</div>
+
+<dialog class="sheet" data-sheet aria-labelledby="sheet-title">
+  <div class="sheet-inner">
+    <div class="sheet-head"><h2 id="sheet-title" data-sheet-title></h2><button class="button-back" type="button" data-sheet-close>Fechar</button></div>
+    <div class="sheet-body" data-sheet-body></div>
+  </div>
+</dialog>

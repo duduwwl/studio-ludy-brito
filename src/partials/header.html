@@ -1,0 +1,28 @@
+<header class="bar" data-bar>
+  <a class="wordmark" href="{{root}}" aria-label="Studio Ludy Brito, página inicial">
+    <img src="{{root}}images/brand/logo-lb-150.webp" width="44" height="44" alt="">
+    <span>Studio Ludy Brito</span>
+  </a>
+  <nav class="bar-nav" aria-label="Principal">
+    <a href="{{root}}servicos/"{{{nav.servicos}}}>Serviços</a>
+    <a href="{{root}}galeria/"{{{nav.galeria}}}>Galeria</a>
+    <a href="{{root}}sobre/"{{{nav.sobre}}}>Sobre</a>
+    <a href="{{root}}contato/"{{{nav.contato}}}>Contato</a>
+  </nav>
+  <a class="button bar-action" href="{{root}}agendamento/">Agendar horário</a>
+  <button class="bar-menu" type="button" aria-expanded="false" aria-controls="menu-movel" data-menu-toggle>
+    <span class="bar-menu-label">Menu</span>
+  </button>
+</header>
+<div class="mobile-menu" id="menu-movel" hidden data-menu>
+  <nav aria-label="Menu">
+    <a href="{{root}}">Início</a>
+    <a href="{{root}}servicos/">Serviços</a>
+    <a href="{{root}}galeria/">Galeria</a>
+    <a href="{{root}}sobre/">Sobre o studio</a>
+    <a href="{{root}}contato/">Contato</a>
+    <a href="{{root}}meus-agendamentos/">Meus agendamentos</a>
+  </nav>
+  <a class="button button-wide" href="{{root}}agendamento/">Agendar horário</a>
+  <p class="mobile-menu-info">{{biz.address}}, {{biz.neighborhood}} · {{biz.city}}<br>{{biz.hoursShort}}</p>
+</div>

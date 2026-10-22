@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agendar horário · Studio Ludy Brito, Lavras</title>
+<meta name="description" content="Agende online no Studio Ludy Brito: escolha o serviço, veja os horários realmente livres e confirme em poucos minutos.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://duduwwl.github.io/studio-ludy-brito/agendamento/">
+<meta name="theme-color" content="#F4F0EC">
+<meta name="lb-root" content="../">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Ludy Brito">
+<meta property="og:title" content="Agendar horário · Studio Ludy Brito, Lavras">
+<meta property="og:description" content="Agende online no Studio Ludy Brito: escolha o serviço, veja os horários realmente livres e confirme em poucos minutos.">
+<meta property="og:url" content="https://duduwwl.github.io/studio-ludy-brito/agendamento/">
+<meta property="og:image" content="https://duduwwl.github.io/studio-ludy-brito/images/hero/retrato-azul-1200.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../images/brand/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/site.css?v=mvj1rpmj">
+<link rel="stylesheet" href="../assets/css/booking.css?v=mvj1rpmj">
+<script>document.documentElement.classList.add('js')</script>
+<script src="../assets/js/config.js?v=mvj1rpmj"></script>
+
+</head>
+<body class="page-booking">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="bar" data-bar>
+  <a class="wordmark" href="../" aria-label="Studio Ludy Brito, página inicial">
+    <img src="../images/brand/logo-lb-150.webp" width="44" height="44" alt="">
+    <span>Studio Ludy Brito</span>
+  </a>
+  <nav class="bar-nav" aria-label="Principal">
+    <a href="../servicos/">Serviços</a>
+    <a href="../galeria/">Galeria</a>
+    <a href="../sobre/">Sobre</a>
+    <a href="../contato/">Contato</a>
+  </nav>
+  <a class="button bar-action" href="../agendamento/">Agendar horário</a>
+  <button class="bar-menu" type="button" aria-expanded="false" aria-controls="menu-movel" data-menu-toggle>
+    <span class="bar-menu-label">Menu</span>
+  </button>
+</header>
+<div class="mobile-menu" id="menu-movel" hidden data-menu>
+  <nav aria-label="Menu">
+    <a href="../">Início</a>
+    <a href="../servicos/">Serviços</a>
+    <a href="../galeria/">Galeria</a>
+    <a href="../sobre/">Sobre o studio</a>
+    <a href="../contato/">Contato</a>
+    <a href="../meus-agendamentos/">Meus agendamentos</a>
+  </nav>
+  <a class="button button-wide" href="../agendamento/">Agendar horário</a>
+  <p class="mobile-menu-info">R. Bernardino Macieira, 334, Centro · Lavras<br>Ter a sex, 8h às 19h · Sáb, 9h às 13h</p>
+</div>
+
+<main id="conteudo" tabindex="-1">
+<div class="booking" data-booking>
+  <header class="booking-head">
+    <h1 class="booking-title">Agendar horário</h1>
+    <nav class="steps" aria-label="Etapas do agendamento">
+      <ol class="steps-list" data-steps>
+        <li data-step-tab="servico"><button type="button" data-goto="servico">Serviço</button></li>
+        <li data-step-tab="profissional"><button type="button" data-goto="profissional">Profissional</button></li>
+        <li data-step-tab="horario"><button type="button" data-goto="horario">Data e horário</button></li>
+        <li data-step-tab="dados"><button type="button" data-goto="dados">Seus dados</button></li>
+        <li data-step-tab="revisao"><button type="button" data-goto="revisao">Revisão</button></li>
+      </ol>
+    </nav>
+  </header>
+
+  <div class="booking-body">
+    <div class="booking-main">
+      <p class="booking-alert" role="alert" data-booking-alert hidden></p>
+
+      <!-- Serviço -->
+      <section class="step" data-step="servico" aria-labelledby="t-servico">
+        <h2 id="t-servico" class="step-title" tabindex="-1">Escolha o serviço</h2>
+        <p class="step-hint" data-multi-hint></p>
+        <div class="service-picker" data-service-picker role="group" aria-labelledby="t-servico">
+          <p class="muted" data-loading>Carregando os serviços…</p>
+        </div>
+        <div class="step-actions">
+          <button class="button" type="button" data-next="servico" disabled>Continuar</button>
+        </div>
+      </section>
+
+      <!-- Profissional -->
+      <section class="step" data-step="profissional" aria-labelledby="t-prof" hidden>
+        <h2 id="t-prof" class="step-title" tabindex="-1">Com quem você quer ser atendida?</h2>
+        <div class="pro-picker" role="radiogroup" aria-labelledby="t-prof" data-pro-picker></div>
+        <div class="step-actions">
+          <button class="button-back" type="button" data-back>Voltar</button>
+          <button class="button" type="button" data-next="profissional">Continuar</button>
+        </div>
+      </section>
+
+      <!-- Data e horário -->
+      <section class="step" data-step="horario" aria-labelledby="t-horario" hidden>
+        <h2 id="t-horario" class="step-title" tabindex="-1">Escolha a data e o horário</h2>
+        <div class="when">
+          <div class="calendar" data-calendar>
+            <div class="cal-head">
+              <button class="cal-nav" type="button" data-cal-prev aria-label="Mês anterior">Anterior</button>
+              <p class="cal-month" aria-live="polite" data-cal-month></p>
+              <button class="cal-nav" type="button" data-cal-next aria-label="Próximo mês">Próximo</button>
+            </div>
+            <table class="cal-grid" role="grid" aria-labelledby="t-horario" data-cal-grid>
+              <thead><tr>
+                <th scope="col" abbr="Domingo">D</th><th scope="col" abbr="Segunda">S</th><th scope="col" abbr="Terça">T</th>
+                <th scope="col" abbr="Quarta">Q</th><th scope="col" abbr="Quinta">Q</th><th scope="col" abbr="Sexta">S</th><th scope="col" abbr="Sábado">S</th>
+              </tr></thead>
+              <tbody data-cal-body></tbody>
+            </table>
+            <p class="cal-legend"><span class="cal-dot" aria-hidden="true"></span> dias com horários livres</p>
+          </div>
+          <div class="slots" data-slots>
+            <p class="slots-empty muted" data-slots-msg>Escolha um dia no calendário para ver os horários livres.</p>
+          </div>
+        </div>
+        <div class="step-actions">
+          <button class="button-back" type="button" data-back>Voltar</button>
+          <button class="button" type="button" data-next="horario" disabled>Continuar</button>
+        </div>
+      </section>
+
+      <!-- Dados -->
+      <section class="step" data-step="dados" aria-labelledby="t-dados" hidden>
+        <h2 id="t-dados" class="step-title" tabindex="-1">Seus dados</h2>
+        <form class="form" data-client-form novalidate>
+          <div class="form-row">
+            <label for="f-nome">Nome completo</label>
+            <input class="field" id="f-nome" name="nome" autocomplete="name" required minlength="3" maxlength="120" aria-describedby="e-nome">
+            <p class="field-error" id="e-nome" data-error-for="nome"></p>
+          </div>
+          <div class="form-row">
+            <label for="f-whats">WhatsApp com DDD</label>
+            <input class="field" id="f-whats" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(35) 99999-9999" required aria-describedby="h-whats e-whats">
+            <p class="field-hint" id="h-whats">Usamos só para falar sobre o seu agendamento.</p>
+            <p class="field-error" id="e-whats" data-error-for="whatsapp"></p>
+          </div>
+          <div class="form-row">
+            <label for="f-email">E-mail <span class="muted">(opcional)</span></label>
+            <input class="field" id="f-email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="160" aria-describedby="h-email e-email">
+            <p class="field-hint" id="h-email">Recomendado: com ele você recebe a confirmação e consulta seus agendamentos com um código.</p>
+            <p class="field-error" id="e-email" data-error-for="email"></p>
+          </div>
+          <div class="form-row">
+            <label for="f-obs">Observações <span class="muted">(opcional)</span></label>
+            <textarea class="field" id="f-obs" name="obs" rows="3" maxlength="500" placeholder="Ex.: quero tirar o gel antigo, tenho alergia a algum produto…" aria-describedby="h-obs"></textarea>
+            <p class="field-hint" id="h-obs"><span data-obs-count>0</span>/500</p>
+          </div>
+          <div class="form-row check">
+            <input type="checkbox" id="f-politica" name="politica" required aria-describedby="e-politica">
+            <label for="f-politica">Li e aceito a política de agendamento e cancelamento.</label>
+          </div>
+          <details class="policy">
+            <summary>Ler a política</summary>
+            <div data-policy-text><p>Cancelamentos e reagendamentos podem ser feitos pelo site até 12 horas antes do horário marcado.</p></div>
+          </details>
+          <p class="field-error" id="e-politica" data-error-for="politica"></p>
+          <div class="form-row check">
+            <input type="checkbox" id="f-privacidade" name="privacidade" required aria-describedby="e-privacidade">
+            <label for="f-privacidade">Autorizo o uso dos meus dados para este agendamento, conforme o <a class="link-plain" href="../privacidade/" target="_blank" rel="noopener">aviso de privacidade</a>.</label>
+          </div>
+          <p class="field-error" id="e-privacidade" data-error-for="privacidade"></p>
+          <div class="step-actions">
+            <button class="button-back" type="button" data-back>Voltar</button>
+            <button class="button" type="submit">Revisar agendamento</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Revisão -->
+      <section class="step" data-step="revisao" aria-labelledby="t-revisao" hidden>
+        <h2 id="t-revisao" class="step-title" tabindex="-1">Confira e confirme</h2>
+        <dl class="review" data-review></dl>
+        <div class="step-actions">
+          <button class="button-back" type="button" data-back>Voltar</button>
+          <button class="button button-big" type="button" data-confirm>Confirmar agendamento</button>
+        </div>
+      </section>
+
+      <!-- Confirmação -->
+      <section class="step done" data-step="confirmado" aria-labelledby="t-ok" hidden>
+        <div class="done-mark" aria-hidden="true">
+          <svg viewBox="0 0 52 52" width="52" height="52"><circle cx="26" cy="26" r="25" /><path d="M15 27l7 7 15-16" /></svg>
+        </div>
+        <h2 id="t-ok" class="step-title" tabindex="-1" data-done-title>Agendamento recebido</h2>
+        <p class="done-lead" data-done-lead></p>
+        <p class="protocol">Protocolo <strong data-done-protocol></strong></p>
+        <dl class="review" data-done-review></dl>
+        <div class="done-actions">
+          <a class="button" data-done-whatsapp href="#" rel="noopener">Avisar o studio pelo WhatsApp</a>
+          <button class="button button-quiet" type="button" data-done-ics>Adicionar ao meu calendário</button>
+          <a class="link-plain" data-done-gcal href="#" target="_blank" rel="noopener">Google Agenda</a>
+        </div>
+        <div class="manage-box">
+          <p>Guarde este link para consultar, reagendar ou cancelar:</p>
+          <p class="manage-link"><a class="link-plain" data-done-manage href="#"></a></p>
+          <button class="button-back" type="button" data-copy-manage>Copiar link</button>
+        </div>
+        <p class="done-more"><a class="link-arrow" href="../">Voltar para o início</a></p>
+      </section>
+    </div>
+
+    <aside class="summary" aria-label="Resumo do agendamento" data-summary>
+      <h2 class="summary-title">Seu agendamento</h2>
+      <dl class="summary-list" data-summary-list>
+        <div><dt>Serviço</dt><dd data-sum="services">Escolha um serviço</dd></div>
+        <div><dt>Profissional</dt><dd data-sum="pro">—</dd></div>
+        <div><dt>Data</dt><dd data-sum="date">—</dd></div>
+        <div><dt>Horário</dt><dd data-sum="time">—</dd></div>
+        <div><dt>Duração</dt><dd data-sum="duration">—</dd></div>
+        <div class="summary-total"><dt>Valor</dt><dd data-sum="price">—</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <div class="mobile-bar" data-mobile-bar>
+    <div class="mobile-bar-info"><span data-mbar-line1>Escolha um serviço</span><span class="muted" data-mbar-line2></span></div>
+    <button class="button" type="button" data-mbar-next disabled>Continuar</button>
+  </div>
+</div>
+<noscript><p class="booking-noscript">Para agendar online, ative o JavaScript do navegador ou fale com a gente pelo WhatsApp (35) 99126-0502.</p></noscript>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-photo">
+    <picture><source type="image/avif" srcset="../images/studio/detalhe-azul-close-480.avif 480w, ../images/studio/detalhe-azul-close-800.avif 800w, ../images/studio/detalhe-azul-close-1200.avif 1200w, ../images/studio/detalhe-azul-close-1800.avif 1800w" sizes="(min-width: 64em) 50vw, 100vw"><img src="../images/studio/detalhe-azul-close-800.webp" srcset="../images/studio/detalhe-azul-close-480.webp 480w, ../images/studio/detalhe-azul-close-800.webp 800w, ../images/studio/detalhe-azul-close-1200.webp 1200w, ../images/studio/detalhe-azul-close-1800.webp 1800w" sizes="(min-width: 64em) 50vw, 100vw" width="3072" height="3840" loading="lazy" decoding="async" alt="Mãos com esmaltação em gel azul com glitter, feita no studio"></picture>
+  </div>
+  <div class="footer-field">
+    <a class="footer-wordmark" href="../">Studio Ludy Brito</a>
+    <nav class="footer-menu" aria-label="Rodapé">
+      <a href="../servicos/">Serviços</a>
+      <a href="../agendamento/">Agendar horário</a>
+      <a href="../galeria/">Galeria</a>
+      <a href="../sobre/">Sobre o studio</a>
+      <a href="../meus-agendamentos/">Meus agendamentos</a>
+      <a href="../contato/">Contato</a>
+    </nav>
+    <div class="footer-blocks">
+      <div>
+        <h2 class="footer-label">Visite</h2>
+        <p>R. Bernardino Macieira, 334<br>Centro, Lavras – MG<br>Ter a sex, 8h às 19h · Sáb, 9h às 13h</p>
+      </div>
+      <div>
+        <h2 class="footer-label">Fale com a gente</h2>
+        <p><a class="link-plain" href="https://wa.me/5535991260502" rel="noopener">WhatsApp (35) 99126-0502</a><br>
+        <a class="link-plain" href="https://www.instagram.com/studioludybrito/" rel="noopener">Instagram @studioludybrito</a></p>
+      </div>
+    </div>
+    <p class="footer-legal">© 2026 Studio Ludy Brito · LB Esmalteria &amp; Cafeteria · <a href="../privacidade/">Privacidade</a> · <a href="../admin/" rel="nofollow">Área da equipe</a></p>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="../assets/js/site.js?v=mvj1rpmj"></script>
+<script type="module" src="../assets/js/booking.js?v=mvj1rpmj"></script>
+</body>
+</html>

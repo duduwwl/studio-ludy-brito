@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="{{robots}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="theme-color" content="#F4F0EC">
+<meta name="lb-root" content="{{root}}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Ludy Brito">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{ogImage}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{root}}images/brand/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="{{root}}images/brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{root}}assets/css/site.css?v={{v}}">
+{{{styles}}}
+<script>document.documentElement.classList.add('js')</script>
+<script src="{{root}}assets/js/config.js?v={{v}}"></script>
+{{{jsonldTag}}}
+</head>
+<body class="{{bodyClass}}">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+{{> header}}
+<main id="conteudo" tabindex="-1">
+{{{content}}}
+</main>
+{{> footer}}
+<div class="toast" role="status" aria-live="polite" hidden></div>
+<script type="module" src="{{root}}assets/js/site.js?v={{v}}"></script>
+{{{scripts}}}
+</body>
+</html>

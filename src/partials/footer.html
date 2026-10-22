@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="footer-photo">
+    [[img src="studio/detalhe-azul-close" sizes="(min-width: 64em) 50vw, 100vw" alt="Mãos com esmaltação em gel azul com glitter, feita no studio"]]
+  </div>
+  <div class="footer-field">
+    <a class="footer-wordmark" href="{{root}}">Studio Ludy Brito</a>
+    <nav class="footer-menu" aria-label="Rodapé">
+      <a href="{{root}}servicos/">Serviços</a>
+      <a href="{{root}}agendamento/">Agendar horário</a>
+      <a href="{{root}}galeria/">Galeria</a>
+      <a href="{{root}}sobre/">Sobre o studio</a>
+      <a href="{{root}}meus-agendamentos/">Meus agendamentos</a>
+      <a href="{{root}}contato/">Contato</a>
+    </nav>
+    <div class="footer-blocks">
+      <div>
+        <h2 class="footer-label">Visite</h2>
+        <p>{{biz.address}}<br>{{biz.neighborhood}}, {{biz.city}} – {{biz.state}}<br>{{biz.hoursShort}}</p>
+      </div>
+      <div>
+        <h2 class="footer-label">Fale com a gente</h2>
+        <p><a class="link-plain" href="{{biz.whatsappUrl}}" rel="noopener">WhatsApp {{biz.whatsappDisplay}}</a><br>
+        <a class="link-plain" href="{{biz.instagramUrl}}" rel="noopener">Instagram @{{biz.instagram}}</a></p>
+      </div>
+    </div>
+    <p class="footer-legal">© {{year}} Studio Ludy Brito · LB Esmalteria &amp; Cafeteria · <a href="{{root}}privacidade/">Privacidade</a> · <a href="{{root}}admin/" rel="nofollow">Área da equipe</a></p>
+  </div>
+</footer>

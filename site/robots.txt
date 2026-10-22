@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /meus-agendamentos/
+
+Sitemap: https://duduwwl.github.io/studio-ludy-brito/sitemap.xml
