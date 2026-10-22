@@ -156,11 +156,12 @@ body.menu-open { overflow: hidden; }
 .hero-title { font-size: var(--step-head); line-height: 1; letter-spacing: -0.03em; max-width: 9ch; }
 .hero-sentence { margin-top: 1.5rem; max-width: 30ch; font-size: var(--step-body); line-height: 1.5; }
 .hero-fallback { margin-top: 1.75rem; }
-.next-slot { margin-top: 1.75rem; display: grid; gap: .6rem; justify-items: start; }
-.next-slot-label { font-size: var(--step-small); color: var(--muted); }
-.next-slot-label .inline-select { color: var(--ink); font-size: var(--step-small); }
+.next-slot { margin-top: 2rem; display: grid; gap: .7rem; justify-items: start; }
+.next-slot-label { color: var(--ink); font-size: clamp(1rem, .94rem + .2vw, 1.125rem); line-height: 1.3; }
+.next-slot-prompt { display: flex; align-items: center; gap: .45rem; margin-bottom: .3rem; }
+.next-slot-label .inline-select { display: block; color: var(--ink); font-size: clamp(1.125rem, 1rem + .35vw, 1.35rem); font-weight: 600; min-height: 2rem; padding-right: 1.4em; }
 .next-slot-value { font-size: var(--step-lead); line-height: 1.25; }
-.pulse { display: inline-block; width: .5rem; height: .5rem; border-radius: 50%; background: var(--ok); margin-right: .35rem; vertical-align: .1em; }
+.pulse { display: inline-block; flex: 0 0 auto; width: .6rem; height: .6rem; border-radius: 50%; background: var(--ok); }
 @media (prefers-reduced-motion: no-preference) {
   .pulse { animation: pulse 2.4s ease-in-out infinite; }
 }
