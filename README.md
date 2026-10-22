@@ -85,7 +85,7 @@ A chave **anon** é pública por natureza; a segurança está nas funções e no
 O site é a pasta `site/`. Ele funciona em subpasta (ex.: GitHub Pages) e em domínio próprio.
 
 - **Painel da hospedagem:** envie o conteúdo de `site/` para a pasta pública (`public_html`).
-- **GitHub Pages:** o workflow `.github/workflows/pages.yml` publica `site/` a cada push na `main`. As chaves vêm dos *secrets* `SUPABASE_URL` e `SUPABASE_ANON_KEY` do repositório.
+- **GitHub Pages:** o workflow `.github/workflows/pages.yml` publica `site/` a cada push na `main`. As chaves vêm dos *secrets* `SUPABASE_URL` e `SUPABASE_ANON_KEY` do repositório. **Sem esses secrets, a publicação sai em modo demonstração:** a agenda funciona só no navegador de quem visita, com um aviso no topo, e o painel fica desligado. Serve para aprovar o visual antes de configurar o banco.
 - **Domínio próprio:** ajuste `siteUrl` em `src/business.json` (URL canônica, sitemap e JSON-LD) e rode `node tools/build.mjs`.
 
 Depois de editar algo em `src/`, rode `node tools/build.mjs` (Node 18+) para regenerar as páginas.

@@ -35,7 +35,8 @@ jobs:
           if [ -n "$SUPABASE_URL" ]; then
             printf "window.LB_CONFIG = { supabaseUrl: '%s', supabaseAnonKey: '%s' };\n" "$SUPABASE_URL" "$SUPABASE_ANON_KEY" > site/assets/js/config.js
           else
-            printf "window.LB_CONFIG = {};\n" > site/assets/js/config.js
+            # sem Supabase configurado: publica a prévia em modo demonstração
+            printf "window.LB_CONFIG = { demo: true };\n" > site/assets/js/config.js
           fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
